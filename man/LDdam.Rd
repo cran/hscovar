@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{LDdam}
 \alias{LDdam}
-\title{LDdam}
+\title{Calculation of maternal LD matrix}
 \usage{
 LDdam(inMat, pos_chr)
 }
@@ -17,7 +17,8 @@ LDdam(inMat, pos_chr)
 }
 }
 \description{
-CALCULATE THE LINKAGE DISEQUILIBRIUM MATRIX FOR THE DAMS
+Matrix containing linkage disequilibrium between marker pairs
+  on maternal gametes is set up by counting haplotypes frequencies.
 }
 \details{
 The function generates a block diagonal sparse matrix based on

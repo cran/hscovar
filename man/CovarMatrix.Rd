@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{CovarMatrix}
 \alias{CovarMatrix}
-\title{CovarMatrix}
+\title{Calculation of covariance matrices from maternal and paternal LD}
 \usage{
 CovarMatrix(exp_freq_mat, LDDam, LDSire, Ns)
 }
@@ -22,7 +22,9 @@ element of the list corresponds to a family}
 }
 }
 \description{
-Calculation of covariance matrices from LD-matrices
+The covariance matrix is set as maternal plus paternal LD
+  matrix where the paternal part is a weighted average of sire-specific LD
+  matrices.
 }
 \details{
 The internal suMM function works on lists!

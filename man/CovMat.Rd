@@ -2,7 +2,7 @@
 % Please edit documentation in R/covmat.R
 \name{CovMat}
 \alias{CovMat}
-\title{CovMat}
+\title{Calculation of covariance or correlation matrix}
 \usage{
 CovMat(linkDam, haploSire, nfam, pos_chr, corr = T)
 }
@@ -33,19 +33,19 @@ list (LEN 2) of matrix (DIM \eqn{p1} x \eqn{p1}) and vector
 }
 }
 \description{
-Calculation of covariance or correlation matrix
-}
-\details{
 The theoretical covariance between pairs of markers is calculated
   from either paternal haplotypes and maternal linkage disequilibrium (LD) or
   vise versa. A genetic map is required. The implementation relies on
   paternal half-sib families and biallelic markers such as single nucleotide
   polymorphisms (SNP).
-
-  If maternal half-sib families are used, the roles of sire/dam are swapped.
-  Multiple families can be considered.
 }
 \note{
+If maternal half-sib families are used, the roles of sire/dam are swapped.
+  Multiple families can be considered.
+
+  Family size is used for weighting covariance terms in case of multiple
+  half-sib families. It only matters if number of progeny differs.
+
 {
   If you have maternal haplotypes (H.mothers; same format as H.sire)
   instead of maternal LD (matLD) then LD can be estimated from counting

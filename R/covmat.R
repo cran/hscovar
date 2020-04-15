@@ -1,13 +1,15 @@
-#' @title CovMat
-#' @description Calculation of covariance or correlation matrix
-#' @details The theoretical covariance between pairs of markers is calculated
+#' @title Calculation of covariance or correlation matrix
+#' @name CovMat
+#' @description The theoretical covariance between pairs of markers is calculated
 #'   from either paternal haplotypes and maternal linkage disequilibrium (LD) or
 #'   vise versa. A genetic map is required. The implementation relies on
 #'   paternal half-sib families and biallelic markers such as single nucleotide
 #'   polymorphisms (SNP).
-#'
-#'   If maternal half-sib families are used, the roles of sire/dam are swapped.
+#' @note If maternal half-sib families are used, the roles of sire/dam are swapped.
 #'   Multiple families can be considered.
+#'
+#'   Family size is used for weighting covariance terms in case of multiple
+#'   half-sib families. It only matters if number of progeny differs.
 #' @param linkDam (p x p) matrix of maternal LD between pairs of p markers;
 #'   matrix is block diagonal in case of multiple chromosomes
 #' @param haploSire (2N x p) matrix of sires haplotypes for all chromosomes

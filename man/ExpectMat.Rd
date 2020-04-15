@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{ExpectMat}
 \alias{ExpectMat}
-\title{ExpectMat}
+\title{Expected value of paternally inherited allele}
 \usage{
 ExpectMat(inMat)
 }
@@ -15,7 +15,8 @@ ExpectMat(inMat)
 }
 }
 \description{
-Expected value of paternally inherited allele
+Expected value is +/-0.5 if sire is homozygous reference/
+  alternate allele or 0 if sire is heterozygous at the investigated marker
 }
 \examples{
  data(testdata)

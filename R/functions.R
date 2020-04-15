@@ -2,9 +2,10 @@
 #                                               Haplo2Geno
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#' @title Haplo2Geno
-#' @description Conversion of haplotypes into genotypes (without checking for
-#'  missing values)
+#' @title Conversion of haplotypes into genotypes
+#' @name Haplo2Geno
+#' @description Haplotypes are converted into into genotypes without checking
+#'  for missing values.
 #' @param inpMat [MATRIX] haplotype matrix (2 lines per individual)
 #' @return
 #' \describe{
@@ -28,8 +29,10 @@ Haplo2Geno = function( inpMat ) {
 #                                               Expectation matrices
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#' @title ExpectMat
-#' @description Expected value of paternally inherited allele
+#' @title Expected value of paternally inherited allele
+#' @name ExpectMat
+#' @description Expected value is +/-0.5 if sire is homozygous reference/
+#'   alternate allele or 0 if sire is heterozygous at the investigated marker
 #' @param inMat [MATRIX] The paternal genotype matrix
 #' @return
 #' \describe{
@@ -51,8 +54,10 @@ ExpectMat = function( inMat) {
 #                                               LD matrices
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#' @title LDdam
-#' @description CALCULATE THE LINKAGE DISEQUILIBRIUM MATRIX FOR THE DAMS
+#' @title Calculation of maternal LD matrix
+#' @name LDdam
+#' @description Matrix containing linkage disequilibrium between marker pairs
+#'   on maternal gametes is set up by counting haplotypes frequencies.
 #' @details The function generates a block diagonal sparse matrix based on
 #'   Matrix::bdiag. Use as.matrix() to obtain a regular one.
 #' @param inMat [MATRIX] The maternal HAPLOTYPE matrix.
@@ -101,8 +106,11 @@ LDdam = function( inMat, pos_chr ){
 }
 
 
-#' @title LDsire
-#' @description CALCULATE THE LINKAGE DISEQUILIBRIUM MATRIX FOR THE SIRES
+#' @title Calculation of paternal LD matrix
+#' @name LDsire
+#' @description Matrix containing linkage disequilibrium between marker pairs
+#'   on paternal gametes is set up from sire haplotypes and genetic-map
+#'   information for each half-sib family.
 #' @details The function generates a block diagonal sparse matrix based on
 #'   Matrix::bdiag. Use as.matrix() to obtain a regular one.
 #' @param inMat [MATRIX] Haplotype matrix for sires for all chromosomes.
@@ -167,8 +175,11 @@ LDsire = function( inMat, pos_chr, family, map_fun = "haldane" ) {
 #                                               Covariance matrices
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#' @title CovarMatrix
-#' @description Calculation of covariance matrices from LD-matrices
+#' @title Calculation of covariance matrices from maternal and paternal LD
+#' @name CovarMatrix
+#' @description The covariance matrix is set as maternal plus paternal LD
+#'   matrix where the paternal part is a weighted average of sire-specific LD
+#'   matrices.
 #' @details The internal suMM function works on lists!
 #' @param exp_freq_mat [MATRIX] paternal EXPECTATION matrix
 #' @param LDDam [MATRIX] maternal Linkage Disequilibrium matrix

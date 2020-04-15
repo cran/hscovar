@@ -1,4 +1,5 @@
 #' @title tagSNP
+#' @name tagSNP
 #' @description Grouping of markers depending on correlation structure
 #' @details Grouping of markers is based on the  correlation matrix. Apart from
 #'   this, the strategy for grouping is similar to Carlson et al. (2004). A
@@ -20,10 +21,10 @@
 #'   bin <- tagSNP(corrmat$R)
 #'   bin <- tagSNP(corrmat$R, 0.5)
 #'   as.numeric(unlist(rlist::list.select(bin, tagsnp)))
-#' @references Carlson, C. S., Eberle, M. A., Rieder, M. J., Yi, Q., Kruglyak,
-#'   L. & Nickerson, D. A. Selecting a maximally informative set of single-
-#'   nucleotide polymorphisms for association analyses using linkage
-#'   disequilibrium. Am. J. Hum. Genet., 2004, 74:106-120.
+#' @references Carlson, Eberle, Rieder, Yi, Kruglyak & Nickerson (2004)
+#'   Selecting a maximally informative set of single-nucleotide polymorphisms
+#'   for association analyses using linkage disequilibrium. Am J Hum Genet,
+#'   74:106-120.
 #' @import rlist
 #' @export
 tagSNP <- function(mat, threshold = 0.8){

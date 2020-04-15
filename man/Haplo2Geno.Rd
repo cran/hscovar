@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{Haplo2Geno}
 \alias{Haplo2Geno}
-\title{Haplo2Geno}
+\title{Conversion of haplotypes into genotypes}
 \usage{
 Haplo2Geno(inpMat)
 }
@@ -15,8 +15,8 @@ Haplo2Geno(inpMat)
 }
 }
 \description{
-Conversion of haplotypes into genotypes (without checking for
- missing values)
+Haplotypes are converted into into genotypes without checking
+ for missing values.
 }
 \examples{
  data(testdata)

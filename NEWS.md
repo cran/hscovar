@@ -1,3 +1,8 @@
+# hscovar 0.2.1
+
+* Functions for calculation of power and optimal sample size in association 
+  studies based on SNP-BLUP approach
+
 # hscovar 0.1.2
 
 * Modification of testdata

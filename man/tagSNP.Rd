@@ -38,8 +38,8 @@ Grouping of markers is based on the  correlation matrix. Apart from
   as.numeric(unlist(rlist::list.select(bin, tagsnp)))
 }
 \references{
-Carlson, C. S., Eberle, M. A., Rieder, M. J., Yi, Q., Kruglyak,
-  L. & Nickerson, D. A. Selecting a maximally informative set of single-
-  nucleotide polymorphisms for association analyses using linkage
-  disequilibrium. Am. J. Hum. Genet., 2004, 74:106-120.
+Carlson, Eberle, Rieder, Yi, Kruglyak & Nickerson (2004)
+  Selecting a maximally informative set of single-nucleotide polymorphisms
+  for association analyses using linkage disequilibrium. Am J Hum Genet,
+  74:106-120.
 }

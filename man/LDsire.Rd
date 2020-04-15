@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{LDsire}
 \alias{LDsire}
-\title{LDsire}
+\title{Calculation of paternal LD matrix}
 \usage{
 LDsire(inMat, pos_chr, family, map_fun = "haldane")
 }
@@ -24,7 +24,9 @@ Ds
 }
 }
 \description{
-CALCULATE THE LINKAGE DISEQUILIBRIUM MATRIX FOR THE SIRES
+Matrix containing linkage disequilibrium between marker pairs
+  on paternal gametes is set up from sire haplotypes and genetic-map
+  information for each half-sib family.
 }
 \details{
 The function generates a block diagonal sparse matrix based on

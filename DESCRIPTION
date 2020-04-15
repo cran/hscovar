@@ -1,7 +1,7 @@
 Package: hscovar
 Type: Package
 Title: Calculation of Covariance Between Markers for Half-Sib Families
-Version: 0.1.2
+Version: 0.2.1
 Authors@R: c(person("Dörte","Wittenburg", role = c("aut", "cre"), 
     email = "wittenburg@fbn-dummerstorf.de"),
     person("Michael", "Doschoris", role = "aut"),
@@ -10,6 +10,8 @@ Description: The theoretical covariance between pairs of markers is calculated
     from either paternal haplotypes and maternal linkage disequilibrium (LD) or 
     vise versa. A genetic map is required. Grouping of markers is based on the 
     correlation matrix and a representative marker is suggested for each group.
+    Employing the correlation matrix, optimal sample size can be derived for 
+    association studies based on a SNP-BLUP approach.
     The implementation relies on paternal half-sib families and biallelic 
     markers. If maternal half-sib families are used, the roles of sire/dam are 
     swapped. Multiple families can be considered.
@@ -20,16 +22,16 @@ Description: The theoretical covariance between pairs of markers is calculated
     maximally informative set of single-nucleotide polymorphisms for association
     analyses using linkage disequilibrium" <doi:10.1086/381000>.
 Depends: R (>= 3.5.0)
-Imports: parallel, Matrix, foreach, rlist
+Imports: parallel, Matrix, foreach, rlist, pwr
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
 NeedsCompilation: no
-Packaged: 2020-02-21 14:26:15 UTC; wittenburg
+Packaged: 2020-04-15 14:39:05 UTC; wittenburg
 Author: Dörte Wittenburg [aut, cre],
   Michael Doschoris [aut],
   Jan Klosa [ctb]
 Maintainer: Dörte Wittenburg <wittenburg@fbn-dummerstorf.de>
 Repository: CRAN
-Date/Publication: 2020-03-04 10:00:02 UTC
+Date/Publication: 2020-04-15 23:20:02 UTC
