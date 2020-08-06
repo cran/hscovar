@@ -118,7 +118,7 @@ LDdam = function( inMat, pos_chr ){
 #' @param family [VECTOR] Which family (sire) should be processed?
 #'   Vector with consecutive entries of the form 1:2, 3:4, 5:6 and so on,
 #'   linking to haplotypes (rows in inMat) of the corresponding sire
-#' @param map_fun [haldane, kosambi] The mapping function applied.
+#' @param map_fun ["haldane" or "kosambi"] The mapping function applied.
 #' @return Ds
 #' \describe{
 #'   \item{\code{Ds}}{(p x p) matrix of paternal LD}

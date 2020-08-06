@@ -1,7 +1,8 @@
 Package: hscovar
 Type: Package
 Title: Calculation of Covariance Between Markers for Half-Sib Families
-Version: 0.2.1
+Version: 0.4.0
+Date: 2020-08-05
 Authors@R: c(person("Dörte","Wittenburg", role = c("aut", "cre"), 
     email = "wittenburg@fbn-dummerstorf.de"),
     person("Michael", "Doschoris", role = "aut"),
@@ -28,10 +29,10 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
 NeedsCompilation: no
-Packaged: 2020-04-15 14:39:05 UTC; wittenburg
+Packaged: 2020-08-06 06:09:39 UTC; wittenburg
 Author: Dörte Wittenburg [aut, cre],
   Michael Doschoris [aut],
   Jan Klosa [ctb]
 Maintainer: Dörte Wittenburg <wittenburg@fbn-dummerstorf.de>
 Repository: CRAN
-Date/Publication: 2020-04-15 23:20:02 UTC
+Date/Publication: 2020-08-06 12:30:06 UTC

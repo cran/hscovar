@@ -28,11 +28,3 @@ ratio
 The ratio of expected value to standard deviation is calculated
   for the estimator of a selected regression coefficient.
 }
-\examples{
-  ### correlation matrix (should depend on sire haplotypes)
-  R <- AR1(100, rho = 0.1)
-  eigendec <- eigen(R)
-  pos <- c(14, 75)
-  b <- rep(0, nrow(R)); b[pos] <- 0.35
-  coeff.beta.k(14, b, 1200, eigendec, 100)
-}

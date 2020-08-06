@@ -1,3 +1,12 @@
+# hscovar 0.4.0
+
+* use of different mapping functions is enabled
+* some parameters have ben renamed to allow for a more general interpretation
+
+# hscovar 0.3.0
+
+* Bug fixed in function tagSNP
+
 # hscovar 0.2.1
 
 * Functions for calculation of power and optimal sample size in association 

@@ -75,14 +75,6 @@ calcvar <- function(lambda, eigendec, n, weights = 1){
 #' @param weights vector (LEN p) of SNP-specific weights or scalar if weights
 #'   are equal for all SNPs; default value 1
 #' @return ratio
-#' @examples
-#'   ### correlation matrix (should depend on sire haplotypes)
-#'   R <- AR1(100, rho = 0.1)
-#'   eigendec <- eigen(R)
-#'   pos <- c(14, 75)
-#'   b <- rep(0, nrow(R)); b[pos] <- 0.35
-#'   coeff.beta.k(14, b, 1200, eigendec, 100)
-#' @export
 coeff.beta.k <- function(k, beta.true, lambda, eigendec, n, weights = 1){
   p <- length(eigendec$values)
   if (length(weights) < p) weights <- rep(weights[1], p)

@@ -15,7 +15,7 @@ LDsire(inMat, pos_chr, family, map_fun = "haldane")
 Vector with consecutive entries of the form 1:2, 3:4, 5:6 and so on,
 linking to haplotypes (rows in inMat) of the corresponding sire}
 
-\item{map_fun}{[haldane, kosambi] The mapping function applied.}
+\item{map_fun}{["haldane" or "kosambi"] The mapping function applied.}
 }
 \value{
 Ds

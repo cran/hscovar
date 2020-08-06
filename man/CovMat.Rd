@@ -4,14 +4,15 @@
 \alias{CovMat}
 \title{Calculation of covariance or correlation matrix}
 \usage{
-CovMat(linkDam, haploSire, nfam, pos_chr, corr = T)
+CovMat(linkMat, haploMat, nfam, pos_chr, map_fun = "haldane", corr = F)
 }
 \arguments{
-\item{linkDam}{(p x p) matrix of maternal LD between pairs of p markers;
+\item{linkMat}{(p x p) matrix of maternal LD between pairs of p markers;
 matrix is block diagonal in case of multiple chromosomes}
 
-\item{haploSire}{(2N x p) matrix of sires haplotypes for all chromosomes
-(2 lines per sire)}
+\item{haploMat}{(2N x p) matrix of sires haplotypes for all chromosomes
+(2 lines per sire) codes as 0's and 1's reflecting reference and alternate
+alleles}
 
 \item{nfam}{vector (LEN N) containing number of progeny per sire or
 scalar value in case of equal family size}
@@ -19,8 +20,11 @@ scalar value in case of equal family size}
 \item{pos_chr}{list (LEN number of chromosomes) of vectors (LEN number of
 markers) of genetic positions in Morgan per chromosome}
 
-\item{corr}{logical; \code{TRUE} (default) if output is correlation matrix or
-\code{FALSE} if output is covariance matrix}
+\item{map_fun}{character string of mapping function used; so far "haldane"
+(default) and "kosambi" are enabled}
+
+\item{corr}{logical; \code{FALSE} (default) if output is covariance matrix or
+\code{TRUE} if output is correlation matrix}
 }
 \value{
 list (LEN 2) of matrix (DIM \eqn{p1} x \eqn{p1}) and vector

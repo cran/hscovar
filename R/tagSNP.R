@@ -38,17 +38,18 @@ tagSNP <- function(mat, threshold = 0.8){
   counter <- 0
   snpset <- 1:p
   coln <- colnames(mat)
+  colnames(mat) <- NULL
   repeat{
     counter <- counter + 1
     # preliminary bins
-    ls <- lapply(snpset, function(i){which(abs(mat[i, ]) > threshold)})
+    ls <- lapply(snpset, function(i){id <- abs(mat[i, snpset]) > threshold; snpset[id]})
     # select largest bin only
     m <- which.max(lapply(ls, length))
     # tagSNP within largest bin
     if (length(ls[[m]]) == 1) {
       ts <- ls[[m]]
     } else {
-      candidate <- apply(mat[ls[[m]], ls[[m]]], 1, function(x){sum(abs(x) > threshold) == length(ls[[m]])})
+      candidate <- apply(mat[ls[[m]], ls[[m]]], 1, function(x){all(abs(x) > threshold)})
       ts <- ls[[m]][candidate][ceiling(sum(candidate) / 2)]
     }
     # output list uses original names of markers
@@ -59,7 +60,7 @@ tagSNP <- function(mat, threshold = 0.8){
     if ((!length(snpset) > 0) || (counter == p)) break
   }
   # feedback
-  z <- length(unique(unlist(list.select(bin, tp = snps))))
+  z <- length(unlist(list.select(bin, tp = snps)))
   message(paste(z, "SNPs have been grouped into", counter, "bins"))
   return(bin)
 }
