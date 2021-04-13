@@ -4,7 +4,9 @@
 \name{matLD}
 \alias{matLD}
 \title{testdata: maternal linkage disequilibrium}
-\format{An object of class \code{matrix} with 300 rows and 300 columns.}
+\format{
+An object of class \code{matrix} (inherits from \code{array}) with 300 rows and 300 columns.
+}
 \usage{
 matLD
 }

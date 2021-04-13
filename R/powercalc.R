@@ -150,9 +150,9 @@ startvalue <- function(lambda, R, nfam, weights = 1){
 #'   \item{\code{h2.ld}}{QTL heritability under linkage-disequilibrium
 #'     assumption}
 #' }
-#' @references Wittenburg, Bonk, Doschoris, Reyer (2019) Design of Experiments
-#'   for Fine-Mapping Quantitative Trait Loci in Livestock Populations
-#'   \url{https://doi.org/10.1101/2019.12.17.879106}
+#' @references Wittenburg, Bonk, Doschoris, Reyer (2020) Design of Experiments
+#'   for Fine-Mapping Quantitative Trait Loci in Livestock Populations.
+#'   BMC Genetics 21:66. \doi{10.1186/s12863-020-00871-1}
 #' @examples
 #'   ### correlation matrix (should depend on sire haplotypes)
 #'   R <- AR1(100, rho = 0.1)
@@ -287,9 +287,9 @@ search.best.n.bisection <- function(R, betaSE, lambda, pos, nstart, nmax, weight
 #' @param alpha type-I error level; default value 0.01
 #' @param typeII type-II error level; default value 0.2
 #' @return vector of optimal sample size over all repetitions
-#' @references Wittenburg, Bonk, Doschoris, Reyer (2019) Design of Experiments
-#'   for Fine-Mapping Quantitative Trait Loci in Livestock Populations
-#'   \url{https://doi.org/10.1101/2019.12.17.879106}
+#' @references Wittenburg, Bonk, Doschoris, Reyer (2020) Design of Experiments
+#'   for Fine-Mapping Quantitative Trait Loci in Livestock Populations. BMC
+#'   Genetics 21:66. \doi{10.1186/s12863-020-00871-1}
 #' @examples
 #'   ### input parameters specified by experimenter
 #'   # number of half-sib families
@@ -333,7 +333,7 @@ pwr.snpblup <- function(nfathers, nqtl, h2, R, rep = 10, nmax = 5000, weights = 
 #' @references
 #'   Gao, Starmer & Martin (2008) A multiple testing correction method for
 #'   genetic association studies using correlated single nucleotide
-#'   polymorphisms. Genet Epidemiol, 32:361-369.
+#'   polymorphisms. Genetic Epidemiology 32:361-369.
 #' @param mat correlation matrix
 #' @param quant percentage cutoff, variation of SNP data explained by
 #'   eigenvalues; default value 0.995

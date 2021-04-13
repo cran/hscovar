@@ -5,8 +5,7 @@
 \alias{testdata}
 \title{Description of the testdata}
 \source{
-The data are available from the RADAR repository
-  \url{https://dx.doi.org/10.22000/280}
+The data are available from RADAR \doi{10.22000/280}.
 }
 \description{
 The data set contains paternal haplotypes, maternal LD and
@@ -24,7 +23,7 @@ The data set contains paternal haplotypes, maternal LD and
 }
 }
 \examples{
-\donttest{
+\dontrun{
 ## data.frame of estimates of paternal recombination rate and maternal LD
 load('Result.RData')
 ## list of haplotypes of sires for each chromosome

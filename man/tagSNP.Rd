@@ -40,6 +40,10 @@ Grouping of markers is based on the  correlation matrix. Apart from
 \references{
 Carlson, Eberle, Rieder, Yi, Kruglyak & Nickerson (2004)
   Selecting a maximally informative set of single-nucleotide polymorphisms
-  for association analyses using linkage disequilibrium. Am J Hum Genet,
-  74:106-120.
+  for association analyses using linkage disequilibrium. American Journal of
+  Human Genetics 74:106-120.
+
+  Wittenburg, Doschoris, Klosa (2021) Grouping of genomic markers in
+  populations with family structure BMC Bioinformatics 22:79.
+  \doi{10.1186/s12859-021-04010-0}
 }

@@ -44,7 +44,7 @@ Haplo2Geno = function( inpMat ) {
 #'  E <- ExpectMat(G)
 #' @export
 ExpectMat = function( inMat) {
-  rule = function( index ) ifelse( index == 2 , 0.5, ifelse( index == 0, -0.5, 0 ) )
+  rule = function( index ) ifelse( index == 2 , 0.5, ifelse( index == 0, -0.5, ifelse(index == 1, 0, NA)) )
   ExP.Fa = apply( inMat, 2, rule )
   return( ExP.Fa )
 }
@@ -158,11 +158,12 @@ LDsire = function( inMat, pos_chr, family, map_fun = "haldane" ) {
     Ds[[ nc ]] = matrix( NA, nrow = p, ncol = p )
     for( j in 1:p ) {
       for( k in j:p ) { # Calculates the upper triangular part plus diagonal
-        if( sum( inMatByChr[[ nc ]][ , j ] ) == 1 & sum( inMatByChr[[ nc ]][ , k ] ) == 1 ) {
-          if( sum( inMatByChr[[ nc ]][ 1, j ], inMatByChr[[ nc ]][ 1, k ] ) == 1 ) Ds[[ nc ]][ j, k ] = -0.25 * ( 1 - 2 * theta( pos_chr, nc, j, k ) )
-          else Ds[[ nc ]][ j, k ] = 0.25 * ( 1 - 2 * theta( pos_chr, nc, j, k ) )
-        }
-        else Ds[[ nc ]][ j, k ] = 0
+        if(!anyNA(inMatByChr[[ nc ]][ , c(j, k) ] )){
+          if( sum( inMatByChr[[ nc ]][ , j ] ) == 1 & sum( inMatByChr[[ nc ]][ , k ] ) == 1 ) {
+            if( sum( inMatByChr[[ nc ]][ 1, j ], inMatByChr[[ nc ]][ 1, k ] ) == 1 ) Ds[[ nc ]][ j, k ] = -0.25 * ( 1 - 2 * theta( pos_chr, nc, j, k ) )
+            else Ds[[ nc ]][ j, k ] = 0.25 * ( 1 - 2 * theta( pos_chr, nc, j, k ) )
+          } else Ds[[ nc ]][ j, k ] = 0
+        } else Ds[[ nc ]][ j, k ] = NA
       }
     }
     Ds[[ nc ]] = Matrix::forceSymmetric( Ds[[ nc ]] ) # The whole matrix
@@ -202,7 +203,10 @@ LDsire = function( inMat, pos_chr, family, map_fun = "haldane" ) {
 #' @export
 CovarMatrix = function( exp_freq_mat, LDDam, LDSire, Ns ) {
 
-  suMM = function( InsertList ) Reduce( "+", Map( "*", InsertList, Ns/sum( Ns ) ) )
+  suMM = function( InsertList ) {
+    InsertList = lapply(InsertList, function(z){z <- replace(z, is.na(z), 0)})
+    Reduce( "+", Map( "*", InsertList, Ns/sum( Ns ) ) )
+  }
 
   #        --- --- --- Process the EXPECTATION matrices --- --- ---
   e1 = list()

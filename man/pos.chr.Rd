@@ -4,7 +4,9 @@
 \name{pos.chr}
 \alias{pos.chr}
 \title{testdata: genetic map positions}
-\format{An object of class \code{list} of length 1.}
+\format{
+An object of class \code{list} of length 1.
+}
 \usage{
 pos.chr
 }

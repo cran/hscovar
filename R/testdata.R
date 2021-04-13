@@ -14,10 +14,9 @@
 #'   matrix is block diagonal in case of multiple chromosomes}
 #' \item{pos.chr}{list of vectors of genetic map positions per chromosome}
 #' }
-#' @source The data are available from the RADAR repository
-#'   \url{https://dx.doi.org/10.22000/280}
+#' @source The data are available from RADAR \doi{10.22000/280}.
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' ## data.frame of estimates of paternal recombination rate and maternal LD
 #' load('Result.RData')
 #' ## list of haplotypes of sires for each chromosome

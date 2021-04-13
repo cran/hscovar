@@ -38,5 +38,5 @@ Adapted simpleM method which considers theoretical correlation
 \references{
 Gao, Starmer & Martin (2008) A multiple testing correction method for
   genetic association studies using correlated single nucleotide
-  polymorphisms. Genet Epidemiol, 32:361-369.
+  polymorphisms. Genetic Epidemiology 32:361-369.
 }

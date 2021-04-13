@@ -76,7 +76,7 @@ Sample size depends on parameters specified by the experimenter
   pwr.snpblup(nfathers, nqtl, h2, R, rep = 1)
 }
 \references{
-Wittenburg, Bonk, Doschoris, Reyer (2019) Design of Experiments
-  for Fine-Mapping Quantitative Trait Loci in Livestock Populations
-  \url{https://doi.org/10.1101/2019.12.17.879106}
+Wittenburg, Bonk, Doschoris, Reyer (2020) Design of Experiments
+  for Fine-Mapping Quantitative Trait Loci in Livestock Populations. BMC
+  Genetics 21:66. \doi{10.1186/s12863-020-00871-1}
 }

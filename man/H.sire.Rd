@@ -4,7 +4,9 @@
 \name{H.sire}
 \alias{H.sire}
 \title{testdata: sire haplotypes}
-\format{An object of class \code{matrix} with 10 rows and 300 columns.}
+\format{
+An object of class \code{matrix} (inherits from \code{array}) with 10 rows and 300 columns.
+}
 \usage{
 H.sire
 }

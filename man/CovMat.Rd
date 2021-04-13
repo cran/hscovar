@@ -8,13 +8,15 @@ CovMat(linkMat, haploMat, nfam, pos_chr, map_fun = "haldane", corr = F)
 }
 \arguments{
 \item{linkMat}{(p x p) matrix of maternal LD between pairs of p markers;
-matrix is block diagonal in case of multiple chromosomes}
+matrix is block diagonal in case of multiple chromosomes and must not
+contain missing values; use zeros if LD is uncertain}
 
 \item{haploMat}{(2N x p) matrix of sires haplotypes for all chromosomes
-(2 lines per sire) codes as 0's and 1's reflecting reference and alternate
-alleles}
+(2 lines per sire); coding with 0's and 1's reflecting reference and
+alternate alleles, respectively; missing values can be coded as NA or any
+integer but not 0 and 1}
 
-\item{nfam}{vector (LEN N) containing number of progeny per sire or
+\item{nfam}{vector (LEN N) containing number of progeny per family or
 scalar value in case of equal family size}
 
 \item{pos_chr}{list (LEN number of chromosomes) of vectors (LEN number of
@@ -37,30 +39,27 @@ list (LEN 2) of matrix (DIM \eqn{p1} x \eqn{p1}) and vector
 }
 }
 \description{
-The theoretical covariance between pairs of markers is calculated
-  from either paternal haplotypes and maternal linkage disequilibrium (LD) or
-  vise versa. A genetic map is required. The implementation relies on
-  paternal half-sib families and biallelic markers such as single nucleotide
-  polymorphisms (SNP).
+The theoretical covariance between pairs of markers is
+  calculated from either paternal haplotypes and maternal linkage
+  disequilibrium (LD) or vise versa. A genetic map is required. The
+  implementation relies on paternal half-sib families and biallelic markers
+  such as single nucleotide polymorphisms (SNP). If parental haplotypes are
+  incomplete (i.e., SNP alleles are missing), those parents will be discarded
+  at the corresponding pairs of SNPs. If maternal half-sib families are used,
+  the roles of sire/dam are swapped. Multiple families can be considered.
 }
 \note{
-If maternal half-sib families are used, the roles of sire/dam are swapped.
-  Multiple families can be considered.
-
-  Family size is used for weighting covariance terms in case of multiple
+Family size is used for weighting covariance terms in case of multiple
   half-sib families. It only matters if number of progeny differs.
 
-{
-  If you have maternal haplotypes (H.mothers; same format as H.sire)
-  instead of maternal LD (matLD) then LD can be estimated from counting
-  haplotype frequencies as:
+  If maternal haplotypes (H.mothers) are used instead of maternal LD (matLD),
+  LD can be estimated from counting haplotype frequencies as:
 
   \code{matLD <- LDdam(inMat = H.mother, pos.chr)}
 
-  If multiple chromosomes are considered, then, for instance:
+  If multiple chromosomes are considered, SNP positions are provided as, e.g.
 
   \code{pos.chr <- list(pos.snp.chr1, pos.snp.chr2, pos.snp.chr3)}
-}
 }
 \examples{
   ### 1: INPUT DATA
@@ -72,7 +71,7 @@ If maternal half-sib families are used, the roles of sire/dam are swapped.
   bin <- tagSNP(corrmat$R, 0.5)
 }
 \references{
-Wittenburg, Bonk, Doschoris, Reyer (2019) "Design of Experiments
-  for Fine-Mapping Quantitative Trait Loci in Livestock Populations"
-  \url{https://doi.org/10.1101/2019.12.17.879106}
+Wittenburg, Bonk, Doschoris, Reyer (2020) Design of Experiments
+  for Fine-Mapping Quantitative Trait Loci in Livestock Populations. BMC
+  Genetics 21:66. \doi{10.1186/s12863-020-00871-1}
 }

@@ -1,3 +1,7 @@
+# hscovar 0.4.1
+
+* improved handling of missing values (which can be anything else than 0 and 1 in the haplotype data)
+
 # hscovar 0.4.0
 
 * use of different mapping functions is enabled
